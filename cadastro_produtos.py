@@ -7,13 +7,14 @@
 # ==================================================
 
 
-# cadastro de produto(s) 
+# CREATE  |  cadastro de produto(s) 
 
-# listar produto(s)
+# READ    |  listar produto(s)
 
-# atualizar produto()
+# UPDATE  |  atualizar produto()
 
-# excluir produto(s)
+# DELETE  |  excluir produto(s)
+
 
 
 # ==================================================
