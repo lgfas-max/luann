@@ -7,7 +7,7 @@ produtos = {
 }
 
 # pensei nesse dicionário = {"nome" = ----, "preço" = -----, "categoria/material": ----, "estoque" = -----,
-# e pensei em ser uma lista de dicionários, um pra cada produto
+# e pensei em ser uma lista de dicionários, um pra cada produto (pim: é uma das possíbilidades, só coloquei esse dict como sugestão)
 
 lista_produtos = [] #aqui teria uma lista com os nomes dos produtos na mesma ordem
 
@@ -33,7 +33,7 @@ lista_produtos = [] #aqui teria uma lista com os nomes dos produtos na mesma ord
 
 # DELETE  |  excluir produto(s)
 
-# eu to achando isso aqui mais direto, será que pode reaproveitar a busca do read para saber o que deletar?
+# eu to achando isso aqui mais direto, será que pode reaproveitar a busca do read para saber o que deletar? (pim: da pra chamar a função do read e fazer as alterações tanto do DELETE como do UPDATE se preferir)
 
 # ==================================================
 #   MENU || "INTERFACE" DO SISTEMA
