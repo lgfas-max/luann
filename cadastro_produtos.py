@@ -65,11 +65,13 @@ def adicionar_produtos():
 #   MENU || "INTERFACE" DO SISTEMA
 # ==================================================
 
+print ("====== Adicione produtos na loja ======")
+
+
 # ==================================================
 #   Main || LOOP INICIAL
 # ==================================================
 
-print ("====== Adicione produtos na loja ======")
 descrição_produtos = adicionar_produtos()
 
 
