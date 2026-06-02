@@ -34,7 +34,7 @@ def adicionar_produtos(descrição_produtos):
         #for p in descrição_produtos: #esse for adiciona apenas a chave nome na lista para ter onde fazer a busca do produto
          #   descrição_produtos.append (p["nome"])
                     
-        if not any(key["nome"] == produto for key in descrição_produtos): #possui a mesma função da outra lista criada e evita a duplicidade pra não trabalhar com varias listas
+        if not any(chave["nome"] == produto for chave in descrição_produtos): #possui a mesma função da outra lista criada e evita a duplicidade pra não trabalhar com varias listas
             print(f"\nProduto '{produto}' adicionado!")
 
             print(f"\nAdicione a descrição do produto: ") #criação do dicionário com a descrição do produto
