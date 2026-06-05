@@ -69,13 +69,40 @@ def adicionar_produtos(descrição_produtos):
 # ==================================================
 #   MENU || "INTERFACE" DO SISTEMA
 # ==================================================
+def menu(descrição_produtos):
+    while True:
+        print("\n======= MENU =======")
+        print("""1 - Adicionar Elemento
+2 - Excluir Elemento
+3 - Atualizar Elemento
+4 - Ver Elementos
+5 - Sair""")
 
-print ("====== Adicione produtos na loja ======")
+        try:
+            acao = int(input("Escolha sua ação de 1 - 5: "))
+        except ValueError:
+            print("Digite apenas números.")
+            continue
+
+        match acao:
+            case 1:
+                adicionar_produtos(descrição_produtos)
+            #case 2:
+             #   excluir(descrição_produtos)
+            #case 3:
+             #   atualizar(descrição_produtos)
+            #case 4:
+             #   print(descrição_produtos)
+            case 5:
+                print("Programa encerrado.")
+                break
+            case _:
+                print("Opção inválida.")
 
 
 # ==================================================
 #   Main || LOOP INICIAL
 # ==================================================
 
-adicionar_produtos(descrição_produtos)
+menu(descrição_produtos)
 
