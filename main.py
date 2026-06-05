@@ -17,7 +17,7 @@ def main():
         except ValueError:
             print("\nDigite apenas números.")
             continue
-        match acao:
+        match acao: #eu pensei em deixar cada case na ordem que ta o crud, mas n sei se é detalhe besta
             case 1:
                 adicionar_produtos(descricao_produtos)
             
@@ -30,8 +30,7 @@ def main():
                 print("\nFunção 'Atualizar Produto' ainda não implementada.")
             
             case 4:
-                # visualizar_produtos(descrição_produtos)
-                print("\nFunção 'READ' ainda não implementada.")
+                consultar_produtos(descrição_produtos)                
             
             case 5:
                 print("\nPrograma encerrado.")
