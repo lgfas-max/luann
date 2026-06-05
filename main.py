@@ -30,7 +30,7 @@ def main():
                 print("\nFunção 'Atualizar Produto' ainda não implementada.")
             
             case 4:
-                consultar_produtos(descrição_produtos)                
+                consultar_produtos(descricao_produtos)                
             
             case 5:
                 print("\nPrograma encerrado.")
