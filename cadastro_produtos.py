@@ -1,7 +1,12 @@
 # ==================================================
 #   DADOS || LISTA/DICT DOS PRODUTOS
 # ==================================================
-    descrição_produtos = [] #lista de dicionários que irão conter a descrição dos produtos
+descrição_produtos = [{
+                "nome":     "Item",
+                "preço":    12.00,
+                "material": "Madeira",
+                "estoque":  2
+            }] #lista de dicionários que irão conter a descrição dos produtos
 
 
 # pensei nesse dicionário = {"nome" = ----, "preço" = -----, "categoria/material": ----, "estoque" = -----,
@@ -16,7 +21,7 @@
 
 #pensei em fazer um mini menu perguntando se quer criar ou nao, e provavelmente um while com uma condicional dentro pra criar um loop de cadastro de produto que pode ser interrompida
 
-def adicionar_produtos():
+def adicionar_produtos(descrição_produtos):
 
     add_produto = input("\nDeseja adicionar produtos na loja? [S/N] ").strip().upper()
 
@@ -24,12 +29,12 @@ def adicionar_produtos():
 
         produto = input("\nDigite o nome do produto: ").strip().capitalize()
 
-        prod_existentes = [] #em duvida se deixo a lista com os nomes dos produtos apenas aqui ou em escopo global, a IA disse que eu tava duplicando dados...
+        #descrição_produtos = [] #em duvida se deixo a lista com os nomes dos produtos apenas aqui ou em escopo global, a IA disse que eu tava duplicando dados...
 
-        for p in descrição_produtos: #esse for adiciona apenas a chave nome na lista para ter onde fazer a busca do produto
-            prod_existentes.append (p["nome"])
+        #for p in descrição_produtos: #esse for adiciona apenas a chave nome na lista para ter onde fazer a busca do produto
+         #   descrição_produtos.append (p["nome"])
                     
-        if produto not in prod_existentes: #verifica se o produto já existe com a lista criada em escopo local com os nomes dos produtos
+        if not any(chave["nome"] == produto for chave in descrição_produtos): #possui a mesma função da outra lista criada e evita a duplicidade pra não trabalhar com varias listas
             print(f"\nProduto '{produto}' adicionado!")
 
             print(f"\nAdicione a descrição do produto: ") #criação do dicionário com a descrição do produto
@@ -46,7 +51,7 @@ def adicionar_produtos():
 
         add_produto = input("\nDeseja adicionar mais produtos? [S/N] ").strip().upper()
 
-    return descrição_produtos
+    return 0
 
 # READ    |  listar produto(s)
 
@@ -72,6 +77,5 @@ print ("====== Adicione produtos na loja ======")
 #   Main || LOOP INICIAL
 # ==================================================
 
-descrição_produtos = adicionar_produtos()
-
+adicionar_produtos(descrição_produtos)
 
