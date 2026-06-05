@@ -4,7 +4,7 @@
 # ==================================================
 from dados import descricao_produtos
 from menu import menu
-from crud import adicionar_produtos
+from crud import *
 # ==================================================
 #   Main || LOOP INICIAL
 # ==================================================
