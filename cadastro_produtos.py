@@ -69,40 +69,55 @@ def adicionar_produtos(descrição_produtos):
 # ==================================================
 #   MENU || "INTERFACE" DO SISTEMA
 # ==================================================
-def menu(descrição_produtos):
-    while True:
-        print("\n======= MENU =======")
-        print("""1 - Adicionar Elemento
-2 - Excluir Elemento
-3 - Atualizar Elemento
-4 - Ver Elementos
-5 - Sair""")
-
-        try:
-            acao = int(input("Escolha sua ação de 1 - 5: "))
-        except ValueError:
-            print("Digite apenas números.")
-            continue
-
-        match acao:
-            case 1:
-                adicionar_produtos(descrição_produtos)
-            #case 2:
-             #   excluir(descrição_produtos)
-            #case 3:
-             #   atualizar(descrição_produtos)
-            #case 4:
-             #   print(descrição_produtos)
-            case 5:
-                print("Programa encerrado.")
-                break
-            case _:
-                print("Opção inválida.")
+def menu():
+    print("\n======= MENU =======")
+    print("1 - Adicionar Produto")
+    print("2 - Excluir Produto")
+    print("3 - Atualizar Produto")
+    print("4 - Ver Produtos")
+    print("5 - Sair")
+    print("====================")
 
 
 # ==================================================
 #   Main || LOOP INICIAL
 # ==================================================
+def main():
+    while True:
+        menu()
 
-menu(descrição_produtos)
+        try:
+            acao = int(input("\nEscolha sua ação (1 - 5): "))
+        except ValueError:
+            print("\nDigite apenas números.")
+            continue
+        match acao:
+            case 1:
+                adicionar_produtos(descrição_produtos)
+            
+            case 2:
+                # excluir_produto(descrição_produtos)
+                print("\nFunção 'Excluir Produto' ainda não implementada.")
+            
+            case 3:
+                # atualizar_produto(descrição_produtos)
+                print("\nFunção 'Atualizar Produto' ainda não implementada.")
+            
+            case 4:
+                # visualizar_produtos(descrição_produtos)
+                print("\nFunção 'READ' ainda não implementada.")
+            
+            case 5:
+                print("\nPrograma encerrado.")
+                break
+            
+            case _:
+                print("\nOpção inválida. Escolha um número entre 1 e 5.")
+
+
+# ==================================================
+#   INICIALIZAÇÃO DO PROGRAMA
+# ==================================================
+if __name__ == "__main__":
+    main()
 
