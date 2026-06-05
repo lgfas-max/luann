@@ -3,7 +3,7 @@
 #   Imports iniciais
 # ==================================================
 from dados import descricao_produtos
-from menu import menu
+from menu import *
 from crud import *
 # ==================================================
 #   Main || LOOP INICIAL
