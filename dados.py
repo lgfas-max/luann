@@ -1,7 +1,7 @@
 # ==================================================
 #   DADOS || LISTA/DICT DOS PRODUTOS
 # ==================================================
-descrição_produtos = [{
+descricao_produtos = [{
                 "nome":     "Escultura",
                 "preço":    12.00,
                 "material": "Madeira",
