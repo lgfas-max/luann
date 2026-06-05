@@ -15,8 +15,6 @@ def adicionar_produtos(descricao_produtos):
 
         produto = input("\nDigite o nome do produto: ").strip().capitalize()
 
-        #descricao_produtos = [] #em duvida se deixo a lista com os nomes dos produtos apenas aqui ou em escopo global, a IA disse que eu tava duplicando dados...
-
         #for p in descricao_produtos: #esse for adiciona apenas a chave nome na lista para ter onde fazer a busca do produto
          #   descricao_produtos.append (p["nome"])
                     
@@ -43,6 +41,54 @@ def adicionar_produtos(descricao_produtos):
 
 # - poderia fazer um for para listar os produtos na lista e outro para o dicionário
 # - um for para ver colocar o indice e/ou chave para acessar um produto específico na lista e/ou no dicionario
+
+def consultar_produtos(descrição_produtos):
+
+    print(f"Os produtos cadastrados são: ")
+
+    #lista todos os produtos cadastrados com um número ordinal associado
+    for i in range (len(descrição_produtos)):
+        print(f"{i+1}º produto: {descrição_produtos[i]["nome"]}")
+
+    consulta_produto = input("\nGostaria consultar um produto? [S/N] -> ").strip().upper()
+
+    #condicional que valida o início do laço de repetição de consulta por produto
+    if consulta_produto!="S":
+        print(f"\nFim da consulta")
+        return False
+    
+
+    #laço de repetição para consultar o dicionário de um produto específico de acordo com o número ordinal informado acima
+    while True:
+
+        num_produto = int(input("\nDigite o número do produto conforme a lista acima: "))
+
+        #laço de repetição que itera a lista de dicionário até encontrar o produto indicado pelo número ordinal
+        for n in range (len(descrição_produtos)):
+            if n+1 == num_produto:
+                print(f"\nDescrição do produto de número {num_produto}:")
+                print(f"{descrição_produtos[n]}")
+
+        continuar_consulta = input("\nGostaria de continuar a consulta por produto? [S/N] -> ").strip().upper()
+
+        #condicional que quebra o laço de repetição caso não se deseje continuar a consulta por produto
+        if continuar_consulta!="S":
+            print("\nFim da consulta por produto")
+            break
+
+    consulta_geral = input("\nGostaria de fazer uma consulta geral? [S/N] -> ").strip().upper()
+
+    #condicional que leva à lista de dicionários com todos os produtos e com print formatado auxiliado por um for
+    if consulta_geral == "S":
+        for g in range (len(descrição_produtos)):
+            print(f"{g+1}º produto: {descrição_produtos[g]}")
+        print("\nFim da consulta geral")
+    else:
+        print("\nVocê saiu da consulta geral")
+    
+
+
+print("="*30, "CONSULTA DE PRODUTOS", "="*30)
 
 # UPDATE  |  atualizar produto() 
 
