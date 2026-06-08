@@ -66,11 +66,12 @@ inscrever_feiras()
 
 #READ | ler a inscrição na feira -> iterar o dicionário e chamar as infos da feira inscrita (como ta dentro da def acima)
 
-
+def ler_inscricao()
 
 #UPTADE | atualizar a inscrição na feira -> se deseja mudar de feira inscrita, precisa deletar toda a inscrição e fazer outra
 
+def atualizar_inscricao()
 
 #DELETE | deletar a inscrição na feira -> perguntar se deseja realizar a inscrição em outra feira ou deletar totalmente
 
-
+def deletar_inscricao()
