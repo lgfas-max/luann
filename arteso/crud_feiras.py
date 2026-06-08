@@ -66,7 +66,37 @@ inscrever_feiras()
 
 #READ | ler a inscrição na feira -> iterar o dicionário e chamar as infos da feira inscrita (como ta dentro da def acima)
 
-def ler_inscricao()
+def ler_inscricao(inscricao_feira):
+
+    print("As informações da sua inscrição: ")
+
+    #laço de repetição que itera cada par chave-valor e printa na tela, gerando um formato de lista para leitura das informações cadastradas
+    for k,v in inscricao_feira.items():
+        print(f"{k}: {v}")
+
+    #laço de repetição que retoma as principais informaçõoes sobre a feira inscrita -> ta no codigo acima também, acho q da pra deixar so aqui talvez
+    for f in info_feiras:
+        if inscricao_feira["Feira"] in f[0].strip().capitalize():
+            print(f"Informações sobre sua próxima feira, {inscricao_feira["Nome"]} -> {inscricao_feira["Feira"]}: {f[1]} \\ {f[2]} \\ {f[3]} \\ {f[4]} \\ {f[5]} \\ {f[6]}")
+
+print("="*30, "INFORMAÇÕES SOBRE A INSCRIÇÃO", "="*30)
+
+ler_inscricao(inscricao_feira)
+
+#IDEIAS -> não sei se daria certo, mas eu e gabriel estavamos comentando de ter a opção de poder ir para outra função ao terminar uma, deve ter jeitos melhores de fazer
+#pensei so pq o read ficou mt simples 
+
+#atalho_atualizar = input("Deseja atualizar a inscrição? [S/N] -> ").strip().upper()
+
+#if atalho_atualizar == "S":
+#    atualizar_inscricao()
+
+#atalho_deletar = input("Deseja deletar a inscrição? [S/N] -> ").strip().upper()
+
+#if atalho_deletar == "S":
+#    deletar_inscricao()
+
+
 
 #UPTADE | atualizar a inscrição na feira -> se deseja mudar de feira inscrita, precisa deletar toda a inscrição e fazer outra
 
