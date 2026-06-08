@@ -1,4 +1,4 @@
-def validar_email_simples(email):
+def validar_email(email):
 
     # Verifica se tem arroba e ponto
     if "@" not in email or "." not in email:
