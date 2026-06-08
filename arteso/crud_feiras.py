@@ -23,12 +23,12 @@ def inscrever_feiras():
     print("OBSERVAÇÃO: Você só pode se inscrever em apenas uma feira a cada semana. Fique atenta aos prazos.")
 
     #adição do par chave-valor no dicionário que irá conter a inscrição da artesã
-    inscricao_feira["feira"] = input("\nDigite o nome da feira (de acordo com a lista): ").strip().capitalize()
-    inscricao_feira["nome"] = input("Digite seu nome completo: ").strip().capitalize()
-    inscricao_feira["endereço"] = input("Digite seu endereço: ") 
-    inscricao_feira["bairro"] = input("Digite seu bairro: ")
-    inscricao_feira["quantidade_produtos"] = input("Digite quantos produtos irá levar: ")
-    inscricao_feira["data_inscrição"] = data_inscricao.strftime("%d/%m/%Y")
+    inscricao_feira["Feira"] = input("\nDigite o nome da feira (de acordo com a lista): ").strip().capitalize()
+    inscricao_feira["Nome"] = input("Digite seu nome completo: ").strip().capitalize()
+    inscricao_feira["Endereço"] = input("Digite seu endereço: ") 
+    inscricao_feira["Bairro"] = input("Digite seu bairro: ")
+    inscricao_feira["Quantidade de produtos"] = input("Digite quantos produtos irá levar: ")
+    inscricao_feira["Data de inscrição"] = data_inscricao.strftime("%d/%m/%Y")
 
 
     #verifica se a artesã já está inscrita em outra feira 
@@ -39,8 +39,8 @@ def inscrever_feiras():
 
     #laço de repetição que itera a lista de feiras e encontra a feira que a artesã está inscrita para retornar informações específicas
     for f in info_feiras:
-        if inscricao_feira["feira"] in f[0].strip().capitalize():
-            print(f"Informações sobre sua próxima feira -> {inscricao_feira["feira"]}: {f[1]} \\ {f[2]} \\ {f[3]} \\ {f[4]} \\ {f[5]} \\ {f[6]}")
+        if inscricao_feira["Feira"] in f[0].strip().capitalize():
+            print(f"Informações sobre sua próxima feira, {inscricao_feira["Nome"]} -> {inscricao_feira["Feira"]}: {f[1]} \\ {f[2]} \\ {f[3]} \\ {f[4]} \\ {f[5]} \\ {f[6]}")
 
 
 with open ("C:\\Users\\blyra\\Downloads\\informacao_feiras.csv", "r", encoding="utf-8") as arquivo:
