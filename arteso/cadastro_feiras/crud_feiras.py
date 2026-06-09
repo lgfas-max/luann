@@ -97,11 +97,104 @@ ler_inscricao(inscricao_feira)
 #    deletar_inscricao()
 
 
+#UPTADE | atualizar a inscrição na feira -> se deseja mudar de feira inscrita, precisa deletar toda a inscrição e fazer outra -> permite atualizar tudo ou só alguns campos.
 
-#UPTADE | atualizar a inscrição na feira -> se deseja mudar de feira inscrita, precisa deletar toda a inscrição e fazer outra
 
-def atualizar_inscricao()
+def atualizar_inscricao(inscricao_feira):
+
+    if len(inscricao_feira) == 0:
+        print("\nVocê não realizou nenhuma inscrição.")
+        return
+
+print("\nO que deseja atualizar?")
+    print("1 - Feira")
+    print("2 - Dados pessoais")
+    print("3 - Tudo")
+
+opcao = input("Escolha uma opção: ")
+
+if opcao == "1":
+        print("\nFeiras disponíveis:")
+        for f in info_feiras:
+            print(f[0])
+
+        nova_feira = input("\nDigite a nova feira: ").strip().capitalize()
+        inscricao_feira["Feira"] = nova_feira
+
+        print("\nAtualizado com sucesso!")
+
+    elif opcao == "2":
+        inscricao_feira["Nome"] = input("Novo nome: ").strip().capitalize()
+        inscricao_feira["Endereço"] = input("Novo endereço: ")
+        inscricao_feira["Bairro"] = input("Digite seu bairro: ")
+        inscricao_feira["Quantidade de produtos"] = input("Nova quantidade de produtos: ")
+
+        print("\nDados atualizados com sucesso!")
+
+    elif opcao == "3":
+        print("\nRefazendo inscrição...")
+
+        for f in info_feiras:
+            print(f[0])
+
+        inscricao_feira["Feira"] = input("\nNova feira: ").strip().capitalize()
+        inscricao_feira["Nome"] = input("Nome completo: ").strip().capitalize()
+        inscricao_feira["Endereço"] = input("Endereço: ")
+        inscricao_feira["Bairro"] = input("Digite seu bairro: ")
+        inscricao_feira["Quantidade de produtos"] = input("Quantidade de produtos: ")
+        inscricao_feira["Data de inscrição"] = data_inscricao.strftime("%d/%m/%Y")
+
+        print("\nInscrição atualizada com sucesso!")
+
+    else:
+        print("\nOpção inválida.")
+
 
 #DELETE | deletar a inscrição na feira -> perguntar se deseja realizar a inscrição em outra feira ou deletar totalmente
 
-def deletar_inscricao()
+
+def deletar_inscricao(inscricao_feira):
+
+    if len(inscricao_feira) == 0:
+        print("\nNão há inscrições para deletar.")
+        return
+
+    print("\nO que deseja fazer?")
+    print("1 - Deletar totalmente a inscrição")
+    print("2 - Realizar inscrição em outra feira")
+
+    opcao = input("Escolha uma opção: ")
+
+    # Deletar totalmente.
+    
+    if opcao == "1":
+
+        confirmacao = input("\nTem certeza que deseja deletar sua inscrição?").strip().upper()
+
+        if confirmacao == "S":
+            inscricao_feira.clear()
+            print("\nInscrição deletada com sucesso!")
+        else:
+            print("\nOperação cancelada.")
+
+    # Realizar a inscrição em outra feira
+    
+    elif opcao == "2":
+
+        print("\nRefazendo inscrição...")
+
+        print("\nFeiras disponíveis:")
+        for f in info_feiras:
+            print(f[0])
+
+        inscricao_feira["Feira"] = input("\nNova feira: ").strip().capitalize()
+        inscricao_feira["Nome"] = input("Nome completo: ").strip().capitalize()
+        inscricao_feira["Endereço"] = input("Endereço: ")
+        inscricao_feira["Bairro"] = input("Digite seu bairro: ")
+        inscricao_feira["Quantidade de produtos"] = input("Quantidade de produtos: ")
+        inscricao_feira["Data de inscrição"] = data_inscricao.strftime("%d/%m/%Y")
+
+        print("\nNova inscrição realizada com sucesso!")
+
+    else:
+        print("\nOpção inválida.")
